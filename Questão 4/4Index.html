@@ -6,40 +6,37 @@
 </head>
 
 <body>
-
-    <script src="ativ4.js"></script>
-
-    <form name="calcular">
+    <form id="calcular">
         <div>
-            <label for="name">Valor 1</label>
-            <input type="text" id="valor1" name="valor1"/>
+            <label for="valor1">Valor 1</label>
+            <input type="number" step="any" id="valor1" name="valor1" />
             <br></br>
         </div>
         <div>
-            <label for="name">Valor 2</label>
-            <input type="text" id="valor2" name="valor2"/>
+            <label for="valor2">Valor 2</label>
+            <input type="number" step="any" id="valor2" name="valor2" />
             <br></br>
         </div>
         <div>
-            <label for="oper">Operação:</label>
+            <label for="opera">Operação:</label>
             <select name="opera" id="opera">
-            <option value="somar">+</option>
-            <option value="subtrair">-</option>
-            <option value="multiplicar">*</option>
-            <option value="dividir">/</option>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
             </select>
             <br></br>
         </div>
         <div class="button">
-            <button type="submit" onclick="Function4(document.calcular.opera.value)">Calcular</button>
+            <button type="submit">Calcular</button>
         </div>
         <div>
             <br>
-            <label for="res">Resultado:</label>
-            <input type="text" name="resul" id="resul" />
+            <label id="resul"></label>
         </div>
     </form>
 
+    <script src="ativ4.js"></script>
 </body>
 
 </html>

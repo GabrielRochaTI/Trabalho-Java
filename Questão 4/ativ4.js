@@ -1,28 +1,34 @@
-var x, valor1, valor2, resul;
+function calc(event) {
+    event.preventDefault();
 
-function Function4(opera) {
+    let resultado = null;
 
-    valor1 = document.calcular.valor1.value;
-    valor1 = parseInt(valor1);
-    valor2 = document.calcular.valor2.value;
-    valor2 = parseFloat(valor2);
+    let val1 = Number(document.getElementById('valor1').value);
+    let val2 = Number(document.getElementById('valor2').value);
+    let operacao = document.getElementById('opera').value;
 
-    if( opera == "somar"){
-        resul = valor1 + valor2;
-    }
-    else if( opera == "subtrair"){
-        resul = valor1 - valor2;
-    }
-    else if( opera == "multiplicar"){
-        resul = valor1 * valor2;
-    }
-    else if( opera == "dividir"){
-        resul = valor1 / valor2;
-    }
-    else{
-        resul = "Operação inválida";
+    switch (operacao) {
+        case '+':
+            resultado = val1 + val2;
+            break;
+
+        case '-':
+            resultado = val1 - val2;
+            break;
+
+        case '*':
+            resultado = val1 * val2;
+            break;
+
+        case '/':
+            resultado = val1 / val2;
+            break;
     }
 
-    document.calcular.resul.value = resul;
-
+    console.log(resultado);
+    document.querySelector('#resul').innerHTML = `Resultado: ${resultado}`;
 }
+
+let formulario = document.querySelector("#calcular");
+
+formulario.addEventListener('submit', calc);
